@@ -1,4 +1,4 @@
 ### This application is used to investigate different needs of a Xamarin project I'm working on.  The features include:
 
- - How to handle user drawing on a canvas :: [link](./XamarinTechInvestigation/FingerPainting/FingerPaintPage.xaml)
- - How to show and print a pdf :: [link](./XamarinTechInvestigation/Pdf/PdfPage.xaml)
+ - How to handle user drawing on a canvas | [xaml-link](./XamarinTechInvestigation/FingerPainting/FingerPaintPage.xaml) | [screenshot1](./XamarinTechInvestigation/finger-painting.png) 
+ - How to show and print a pdf | [xaml-link](./XamarinTechInvestigation/Pdf/PdfPage.xaml) | [screenshot1](./XamarinTechInvestigation/pdf-button.png) [screenshot2](./XamarinTechInvestigation/pdf-print.png)
