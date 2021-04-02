@@ -68,10 +68,14 @@
         <Grid Grid.Row="1"
               Grid.Column="0"
               Grid.ColumnSpan="3"
-              BackgroundColor="White">
+              
+              BackgroundColor="Blue">
 
             <skia:SKCanvasView x:Name="canvasView"
+                                Background="Transparent"
                                PaintSurface="OnCanvasViewPaintSurface" />
+
+
             <Grid.Effects>
                 <tt:TouchEffect Capture="True"
                                 TouchAction="OnTouchEffectAction" />
