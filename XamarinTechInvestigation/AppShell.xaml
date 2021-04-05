@@ -3,6 +3,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:fp="clr-namespace:XamarinTechInvestigation.FingerPainting"
        xmlns:pdf="clr-namespace:XamarinTechInvestigation.Pdf"
+       xmlns:gl="clr-namespace:XamarinTechInvestigation.GroupedLists"
        Title="XamarinTechInvestigation"
        x:Class="XamarinTechInvestigation.AppShell">
 
@@ -31,9 +32,10 @@
     </Shell.Resources>
 
     <TabBar>
+        <ShellContent Title="Grouped Lists" Icon="icon_about.png" Route="GroupedListsPage" ContentTemplate="{DataTemplate gl:GroupedListsPage}" />
         <ShellContent Title="Finger Painting" Icon="icon_about.png" Route="FingerPaintPage" ContentTemplate="{DataTemplate fp:FingerPaintPage}" />
         <ShellContent Title="Pdf" Icon="icon_pdf.png" Route="PdfPage" ContentTemplate="{DataTemplate pdf:PdfPage}" />
-
+  
     </TabBar>
 
 

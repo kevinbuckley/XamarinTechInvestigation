@@ -21,5 +21,6 @@
   <ItemGroup>
     <Folder Include="FingerPainting\" />
     <Folder Include="Pdf\" />
+    <Folder Include="GroupedLists\" />
   </ItemGroup>
 </Project>
