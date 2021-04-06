@@ -4,39 +4,47 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="XamarinTechInvestigation.GroupedLists.GroupedListsPage">
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <ScrollView>
 
-            <CollectionView ItemsSource="{Binding Animals}"
-                    IsGrouped="true">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="10">
-                
-                            <Image Grid.RowSpan="2"
-                                   Source="{Binding ImageUrl}"
-                                   Aspect="AspectFill"
-                                   HeightRequest="60"
-                                   WidthRequest="60" />
-                            <Label Grid.Column="1"
-                                   Text="{Binding Name}"
-                                   FontAttributes="Bold" />
-                            <Label Grid.Row="1"
-                                   Grid.Column="1"
-                                   Text="{Binding Location}"
-                                   FontAttributes="Italic"
-                                   VerticalOptions="End" />
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-                 <CollectionView.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <Label Text="{Binding Name}"
-                               BackgroundColor="LightGray"
-                               FontSize="Large"
-                               FontAttributes="Bold" />
-                    </DataTemplate>
-                </CollectionView.GroupHeaderTemplate>
-            </CollectionView>
+        <StackLayout BindableLayout.ItemsSource="{Binding Animals}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label
+                            Text="{Binding Name}"
+                            FontAttributes="Bold"
+                            FontSize="Title"/>
+                        <CarouselView PeekAreaInsets="10" ItemsSource="{Binding Animals}"
+                                      HeightRequest="70">
+                            
+                            <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                               <Frame Margin="20"
+                                      BorderColor="#CCCCCC"
+                                       HasShadow="True"
+                                       CornerRadius="12"
+                                       HeightRequest="120"
+                                       WidthRequest="120">
+                                    <Frame.Background>
+                                        <LinearGradientBrush StartPoint="0,0"
+                                                             EndPoint="0,1">
+                                            <GradientStop Color="#EFEFEF"
+                                                          Offset="0.1"/>
+                                            <GradientStop Color="#CCCCCC"
+                                                          Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Label Margin="5" Padding="5"
+                                                Text="{Binding Name}"
+                                                FontAttributes="Bold" />
+                                    </Frame>
+                            </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

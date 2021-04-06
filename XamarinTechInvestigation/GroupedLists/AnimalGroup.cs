@@ -5,9 +5,10 @@ namespace XamarinTechInvestigation.GroupedLists
     public class AnimalGroup : List<Animal>
     {
         public string Name { get; private set; }
-
-        public AnimalGroup(string name, List<Animal> animals) : base(animals)
+        public List<Animal> Animals { get; set; } = new List<Animal>();
+        public AnimalGroup(string name, List<Animal> animals) 
         {
+            Animals = animals;
             Name = name;
         }
     }
