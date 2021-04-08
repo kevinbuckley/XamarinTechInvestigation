@@ -14,33 +14,26 @@
                             Text="{Binding Name}"
                             FontAttributes="Bold"
                             FontSize="Title"/>
-                        <CarouselView PeekAreaInsets="10" ItemsSource="{Binding Animals}"
-                                      HeightRequest="70">
-                            
-                            <CarouselView.ItemTemplate>
-                            <DataTemplate>
-                               <Frame Margin="20"
-                                      BorderColor="#CCCCCC"
-                                       HasShadow="True"
-                                       CornerRadius="12"
-                                       HeightRequest="120"
-                                       WidthRequest="120">
-                                    <Frame.Background>
-                                        <LinearGradientBrush StartPoint="0,0"
-                                                             EndPoint="0,1">
-                                            <GradientStop Color="#EFEFEF"
-                                                          Offset="0.1"/>
-                                            <GradientStop Color="#CCCCCC"
-                                                          Offset="1.0"/>
-                                        </LinearGradientBrush>
-                                    </Frame.Background>
-                                    <Label Margin="5" Padding="5"
-                                                Text="{Binding Name}"
-                                                FontAttributes="Bold" />
-                                    </Frame>
-                            </DataTemplate>
-                            </CarouselView.ItemTemplate>
-                        </CarouselView>
+                          <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+
+                            <StackLayout BindableLayout.ItemsSource="{Binding Animals}"
+                                         Orientation="Horizontal">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame Margin="10"
+                                          BorderColor="#CCCCCC"
+                                           HasShadow="True"
+                                           CornerRadius="12"
+                                           HeightRequest="120"
+                                           WidthRequest="120">
+                                            <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                                Margin="3,15"  Text="{Binding Name}" FontSize="14">
+                                            </Label>
+                                        </Frame>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
                     </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
