@@ -27,6 +27,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>Apple Development: Kevin Buckley (79ZQD74RBD)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -36,6 +37,7 @@
     <WarningLevel>4</WarningLevel>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
+    <CodesignKey>Apple Development: Kevin Buckley (79ZQD74RBD)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,11 +48,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: Kevin Buckley (79ZQD74RBD)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
+    <CodesignProvision>xamarintechinvestigation</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -59,8 +62,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: Kevin Buckley (79ZQD74RBD)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+<MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TouchEffect.cs" />
     <Compile Include="TouchRecognizer.cs" />
+    <Compile Include="Notifications\RemoteNotification.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -147,6 +152,15 @@
     <PackageReference Include="Xamarin.Forms.SaveOpenPDFPackage">
       <Version>1.0.0</Version>
     </PackageReference>
+    <PackageReference Include="AWSSDK.CognitoIdentityProvider">
+      <Version>3.7.0.9</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.CognitoIdentity">
+      <Version>3.7.0.9</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.SimpleNotificationService">
+      <Version>3.7.0.10</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -154,5 +168,8 @@
       <Project>{4D44D1FD-3EAC-4623-A6AE-4B4639880927}</Project>
       <Name>XamarinTechInvestigation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Notifications\" />
   </ItemGroup>
 </Project>

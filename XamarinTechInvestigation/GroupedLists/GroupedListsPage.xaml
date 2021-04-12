@@ -2,7 +2,18 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="XamarinTechInvestigation.GroupedLists.GroupedListsPage">
+    x:Class="XamarinTechInvestigation.GroupedLists.GroupedListsPage"
+    BackgroundColor="#eeeeee">
+    <ContentPage.Background>
+         <LinearGradientBrush StartPoint="0,0"
+                                EndPoint="0,1">
+            <GradientStop Color="#f3f3f3"
+                            Offset="0.1"/>
+            <GradientStop Color="#efefef"
+                            Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
     <ContentPage.Content>
         <ScrollView>
 
@@ -12,8 +23,7 @@
                     <StackLayout>
                         <Label
                             Text="{Binding Name}"
-                            FontAttributes="Bold"
-                            FontSize="Title"/>
+                            FontSize="Large" />
                           <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
 
                             <StackLayout BindableLayout.ItemsSource="{Binding Animals}"
@@ -21,11 +31,13 @@
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <Frame Margin="10"
-                                          BorderColor="#CCCCCC"
+                                          BorderColor="#DDDDDD"
                                            HasShadow="True"
-                                           CornerRadius="12"
+                                           CornerRadius="20"
                                            HeightRequest="120"
+                                            BackgroundColor="White"
                                            WidthRequest="120">
+                                           
                                             <Label VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                                                 Margin="3,15"  Text="{Binding Name}" FontSize="14">
                                             </Label>

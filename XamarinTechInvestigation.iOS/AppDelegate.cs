@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Amazon.SimpleNotificationService;
+using Amazon;
+using Amazon.CognitoIdentity;
 using Foundation;
 using UIKit;
+using System.Runtime.InteropServices;
+using ObjCRuntime;
 
 namespace XamarinTechInvestigation.iOS
 {
@@ -13,6 +17,8 @@ namespace XamarinTechInvestigation.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
+        private Notifications.RemoteNotification noties = new Notifications.RemoteNotification();
+       
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -28,7 +34,24 @@ namespace XamarinTechInvestigation.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            noties.Init(app);
+
             return base.FinishedLaunching(app, options);
+        }
+        public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+        {
+            base.FailedToRegisterForRemoteNotifications(application, error);
+        }
+
+
+        public override void RegisteredForRemoteNotifications(UIApplication application, NSData token)
+        {
+            noties.Register(token);
+        }
+
+        public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
+        {
+            noties.Fire();
         }
     }
 }
