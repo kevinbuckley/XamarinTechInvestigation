@@ -25,6 +25,6 @@
     <Folder Include="FingerPainting\" />
     <Folder Include="Pdf\" />
     <Folder Include="GroupedLists\" />
-    <Folder Include="Noties\" />
+    <Folder Include="Notifications\" />
   </ItemGroup>
 </Project>

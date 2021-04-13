@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinTechInvestigation.Notifications;
 
 namespace XamarinTechInvestigation
 {
@@ -10,6 +11,8 @@ namespace XamarinTechInvestigation
         public App()
         {
             InitializeComponent();
+            DependencyService.Get<INotificationManager>().Initialize();
+
             MainPage = new AppShell();
         }
 

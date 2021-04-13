@@ -8,6 +8,8 @@ using Foundation;
 using UIKit;
 using System.Runtime.InteropServices;
 using ObjCRuntime;
+using UserNotifications;
+
 
 namespace XamarinTechInvestigation.iOS
 {
@@ -32,6 +34,9 @@ namespace XamarinTechInvestigation.iOS
             Xamarin.Calabash.Start();
 #endif
             global::Xamarin.Forms.Forms.Init();
+
+            UNUserNotificationCenter.Current.Delegate = new Notifications.iOSNotificationReceiver();
+
             LoadApplication(new App());
 
             noties.Init(app);
